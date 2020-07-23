@@ -18,32 +18,39 @@ function hitung_imt() {
     var yyyy = today.getFullYear();
     var hasil = bb / ((tb / 100) * (tb / 100));
 
-    imt.date = mm + '/' + dd + '/' + yyyy + " " + hour + ":" + minute;
+    
+
+    if(tb != "" && bb != ""){
+        imt.date = mm + '/' + dd + '/' + yyyy + " " + hour + ":" + minute;
     imt.tinggiBadan = tb;
     imt.beratBadan = bb;
+        if (hasil >= 18.5 && hasil <= 25) {
+            imt.hasil = hasil.toFixed(2) + " (Normal)";
+            document.getElementById("hasil").innerHTML = "<h2 style='color: green;'>Hasil Indeks Masa Tubuh Anda " + hasil.toFixed(2) + " termasuk Normal<h2>";
+        } else if (hasil < 18.5) {
+            imt.hasil = hasil.toFixed(2) + " (Kurang)";
+            document.getElementById("hasil").innerHTML = "<h2 style='color: blue;'>Hasil Indeks Masa Tubuh Anda " + hasil.toFixed(2) + " termasuk Berat Badan Kurang<h2>";
+        } else if (hasil > 25 && hasil <= 40) {
+            imt.hasil = hasil.toFixed(2) + " (Berlebih)";
+            document.getElementById("hasil").innerHTML = "<h2 style='color: orange;'>Hasil Indeks Masa Tubuh Anda " + hasil.toFixed(2) + " termasuk Berat Badan Berlebih<h2>";
+        } else if (hasil > 40) {
+            imt.hasil = hasil.toFixed(2) + " (Obesitas)";
+            document.getElementById("hasil").innerHTML = "<h2 style='color: red;'>Hasil Indeks Masa Tubuh Anda " + hasil.toFixed(2) + " termasuk Obesitas<h2>";
+        }
+    
+        const history = {
+            date: imt.date,
+            tinggiBadan: imt.tinggiBadan,
+            beratBadan: imt.beratBadan,
+            hasil: imt.hasil,
+        }
+        putHistory(history);
+        renderHistory();
+    }else{
+        document.getElementById("hasil").innerHTML = "<h2 id='hasil'>Eitsss ... Isi Tinggi Badan dan Berat Badan dulu yaa!!</h2>";
 
-    if (hasil >= 18.5 && hasil <= 25) {
-        imt.hasil = hasil.toFixed(2) + " (Normal)";
-        document.getElementById("hasil").innerHTML = "<h2 style='color: green;'>Hasil Indeks Masa Tubuh Anda " + hasil.toFixed(2) + " termasuk Normal<h2>";
-    } else if (hasil < 18.5) {
-        imt.hasil = hasil.toFixed(2) + " (Kurang)";
-        document.getElementById("hasil").innerHTML = "<h2 style='color: blue;'>Hasil Indeks Masa Tubuh Anda " + hasil.toFixed(2) + " termasuk Berat Badan Kurang<h2>";
-    } else if (hasil > 25 && hasil <= 40) {
-        imt.hasil = hasil.toFixed(2) + " (Berlebih)";
-        document.getElementById("hasil").innerHTML = "<h2 style='color: orange;'>Hasil Indeks Masa Tubuh Anda " + hasil.toFixed(2) + " termasuk Berat Badan Berlebih<h2>";
-    } else if (hasil > 40) {
-        imt.hasil = hasil.toFixed(2) + " (Obesitas)";
-        document.getElementById("hasil").innerHTML = "<h2 style='color: red;'>Hasil Indeks Masa Tubuh Anda " + hasil.toFixed(2) + " termasuk Obesitas<h2>";
     }
-
-    const history = {
-        date: imt.date,
-        tinggiBadan: imt.tinggiBadan,
-        beratBadan: imt.beratBadan,
-        hasil: imt.hasil,
-    }
-    putHistory(history);
-    renderHistory();
+    
 }
 
 function reset_imt() {
