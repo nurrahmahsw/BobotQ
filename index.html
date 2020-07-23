@@ -10,7 +10,7 @@
 <body>
     <header>
         <div class="jumbotron">
-            <h1>BobotQu! <small style="font-size:smaller;">v.1</small></h1>
+            <h1>BobotQ! <small style="font-size:smaller;">v.1</small></h1>
             <p>Sebuah aplikasi sederhana untuk menghitung indeks masa tubuh.</p>
         </div>
 
@@ -27,28 +27,36 @@
         <div id="content">
             <section id="hitung" class="card">
                 <h2>Hitung Indeks Masa Tubuh-Mu Disini</h2>
-                <div>
-                    <label>Tinggi Badan (cm) </label><input type="number">
-                    <label>Berat Badan (kg) </label><input type="number">
-                    <button class="button">Cek Indeks Masa Tubuh</button>
+                <div class="flex-container-column">
+                    <label>Tinggi Badan (cm) </label><input type="number" min="0" id="tb">
+                    <label>Berat Badan (kg) </label><input type="number" min="0" id="bb">
+                    <button class="button hasil" onclick="hitung_imt()">Cek Indeks Masa Tubuh</button>
+                    <!-- <button class="button reset" style="background-color: orange;">Reset</button> -->
                 </div>
-                <div class="hasil">
-                </div>
+                <h2 id="hasil">Isi Tinggi Badan dan Berat Badan dulu yaa!</h2>
+                <br>
+                <small><i>*berdasarkan rumus indeks masa tubuh untuk menentukan apakah berat badan Anda tergolong normal, kurang, berlebih, atau obesitas. Hasil cek kesehatan ini hanya dapat digunakan sebagai informasi tambahan (halodoc)</i></small>
             </section>
 
             <section id="riwayat" class="card">
                 <h2>Riwayat Indeks Masa Tubuh</h2>
                 <div class="history">
-                    <table>
+                <!-- <small><i>*Keterangan Hasil : K (Kurang), N (Normal), B (Berlebih), O (Obesitas)</i></small> -->
+                    <table id="tabelHistory">
                         <thead>
                             <tr>
                                 <th>Tanggal</th>
-                                <th>Indeks Masa Tubuh</th>
+                                <th>TB (cm)</th>
+                                <th>BB (kg)</th>
                                 <th>Hasil</th>
                             </tr>
                         </thead>
                         <tbody id="historyList"></tbody>
                     </table>
+                    <div id="wrapper">
+                    <button onclick="reset_imt()">Hapus Riwayat</button>
+
+                    </div>
                 </div>
             </section>
         </div>
@@ -61,10 +69,10 @@
                         <img src="assets/image/ava.jpg" class="ava">
                     </figure>
                 </header>
-                <section>
-                    <h3 style="text-align: center;">Nurrahmah Sriwijayanti</h3>
-                    <h5 style="text-align: center;">Asal | Jogja</h5>
-                    <h5 style="text-align: center;">Github | nurrahmahsw</h5>
+                <section style="text-align: center;">
+                    <h3>Nurrahmah Sriwijayanti</h3>
+                    <p>Hello, World! | Jogja | @nurrahmahsw</p>
+                    
                 </section>
             </article>
         </aside>
@@ -73,6 +81,8 @@
     <footer>
         <p>Dibuat dengan &hearts; di Jogja, Indonesia</p>
     </footer>
-</body>
 
+    <script src="assets/js/imt.js"></script>
+    <script src="assets/js/imt_storage.js"></script>
+</body>
 </html>

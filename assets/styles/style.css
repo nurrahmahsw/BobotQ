@@ -66,6 +66,7 @@ h3 {
 .button {
 
     /* properti pendukung */
+    margin-left: 1rem;
     text-align: center;
     border: 1px solid black;
     background: #FFDC5B;
@@ -74,6 +75,7 @@ h3 {
 
 .button:hover {
     font-weight: bold;
+    color: white;
 }
 
 .jumbotron {
@@ -128,8 +130,74 @@ aside {
 
 }
 
-* {
-    box-sizing: border-box;
+/* .cardaside table, th, tr, td{
+    padding: 0 0 0 0 !important;
+
+} */
+
+.flex-container-column {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+}
+
+.flex-container-column, input, label{
+    margin-right: 2rem;
+}
+
+.tblaside th {
+    text-align: right !important;
+}
+
+.history table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+.history th,
+td {
+    text-align: center;
+    padding: 16px;
+}
+
+.history th {
+    background-color: #FFDC5B;
+    color: white;
+}
+
+.history tr:nth-child(even) {
+    background-color: #d2d2d2;
+}
+
+#wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+#wrapper button{
+    margin: 2rem;
+    text-align: center;
+    border: 1px solid black;
+    background: #FFDC5B;
+    cursor: pointer;
+}
+
+#wrapper button:hover {
+    font-weight: bold;
+    color: white;
+}
+
+.ava{
+    border-radius: 50%;
+}
+
+.history {
+    width: 100%;
+    /* margin: 30px auto 0 auto; */
+    /* overflow: scroll; */
 }
 
 @media screen and (max-width: 1000px) {
@@ -142,43 +210,28 @@ aside {
 
     .history {
         width: 100%;
+    overflow: scroll;
+
+        
     }
-}
+    
+    .flex-container-column, input{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+    }
 
-.tblaside th {
-    text-align: right !important;
-}
+    .flex-container-column, label{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+    }
 
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-    border: 1px solid #ddd;
-}
+    .flex-container-column, button{
+        margin-top: 1rem;
+        margin-left: 0 !important;
 
-th,
-td {
-    text-align: center;
-    padding: 16px;
-}
-
-th {
-    background-color: orange;
-    color: white;
-}
-
-tr:nth-child(even) {
-    background-color: #d2d2d2;
-}
-
-.ava{
-    border-radius: 50%;
-}
-
-.history {
-    width: 100%;
-    /* margin: 30px auto 0 auto; */
-    /* overflow: scroll; */
+    }
 }
 
 footer {
