@@ -234,6 +234,16 @@ td {
     }
 }
 
+#tabelInfo table{
+    border-collapse: collapse;
+    /* width: 100%; */
+}
+
+#tabelInfo table, th, td{
+    border: 1px solid black;
+    /* width: 100%; */
+}
+
 footer {
     padding: 20px;
     color: white;

@@ -10,7 +10,7 @@
 <body>
     <header>
         <div class="jumbotron">
-            <h1>BobotQ! <small style="font-size:smaller;">v.1</small></h1>
+            <h1>BobotQ!</h1>
             <p>Sebuah aplikasi sederhana untuk menghitung indeks masa tubuh.</p>
         </div>
 
@@ -35,13 +35,15 @@
                 </div>
                 <h2 id="hasil">Isi Tinggi Badan dan Berat Badan dulu yaa!</h2>
                 <br>
-                <small><i>*berdasarkan rumus indeks masa tubuh untuk menentukan apakah berat badan Anda tergolong normal, kurang, berlebih, atau obesitas. Hasil cek kesehatan ini hanya dapat digunakan sebagai informasi tambahan (halodoc)</i></small>
+                <small><i>*berdasarkan rumus indeks masa tubuh untuk menentukan apakah berat badan Anda tergolong
+                        normal, kurang, berlebih, atau obesitas. Hasil cek kesehatan ini hanya dapat digunakan sebagai
+                        informasi tambahan (halodoc)</i></small>
             </section>
 
             <section id="riwayat" class="card">
                 <h2>Riwayat Indeks Masa Tubuh</h2>
                 <div class="history">
-                <!-- <small><i>*Keterangan Hasil : K (Kurang), N (Normal), B (Berlebih), O (Obesitas)</i></small> -->
+                    <!-- <small><i>*Keterangan Hasil : K (Kurang), N (Normal), B (Berlebih), O (Obesitas)</i></small> -->
                     <table id="tabelHistory">
                         <thead>
                             <tr>
@@ -54,7 +56,7 @@
                         <tbody id="historyList"></tbody>
                     </table>
                     <div id="wrapper">
-                    <button onclick="reset_imt()">Hapus Riwayat</button>
+                        <button onclick="reset_imt()">Hapus Riwayat</button>
 
                     </div>
                 </div>
@@ -64,15 +66,41 @@
         <aside class="profile">
             <article class="cardaside">
                 <header>
-                    <h2>Hello, World!</h2>
-                    <figure>
-                        <img src="assets/image/ava.jpg" class="ava">
-                    </figure>
+                    <h3>Batas Ambang Indeks Masa Tubuh (IMT) Untuk Indonesia</h3>
                 </header>
                 <section style="text-align: center;">
-                    <h3>Nurrahmah Sriwijayanti</h3>
-                    <p>Hello, World! | Jogja | @nurrahmahsw</p>
-                    
+                    <div id="tabelInfo">
+                        <table style="width: 100%;">
+                            <!-- <th>Tanggal</th> -->
+                            <tr>
+                                <th style="width: 60%;">Kategori</th>
+                                <th style="width: 40%;">IMT</th>
+                            </tr>
+                            <tr style="background-color: #F0F8FF;">
+                                <td>Kurus Berat</td>
+                                <td>&lt; 17.0</td>
+                            </tr>
+                            <tr style="background-color: #B0E0E6;">
+                                <td>Kurus Ringan</td>
+                                <td>17.0 - 18.4</td>
+                            </tr>
+                            <tr style="background-color: greenyellow;">
+                                <td>Normal</td>
+                                <td>18.5 - 25.0</td>
+                            </tr>
+                            <tr style="background-color: orange;">
+                                <td>Berlebih</td>
+                                <td>25.1 - 27.0</td>
+                            </tr>
+                            <tr style="background-color: orangered;">
+                                <td>Obesitas</td>
+                                <td>	&gt; 27.0</td>
+                            </tr>
+                        </table>
+
+                    </div>
+                    <small><i>*Menurut Kementrian Kesehatan Indonesia</i></small>
+
                 </section>
             </article>
         </aside>
@@ -85,4 +113,5 @@
     <script src="assets/js/imt.js"></script>
     <script src="assets/js/imt_storage.js"></script>
 </body>
+
 </html>
